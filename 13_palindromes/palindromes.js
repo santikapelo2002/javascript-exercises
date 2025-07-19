@@ -1,13 +1,26 @@
 const palindromes = function (string) {
-   let stringNuevo = string.split("").slice().reverse().join("").toLowerCase().trim();
-   let stringFinal = string.toLowerCase().trim();
+   let stringNuevo = string.split("").slice().reverse().join("").toLowerCase().replace(/[.,\s?!]/g, "");
+   let stringFinal = string.toLowerCase().replace(/[.,\s?!]/g, "");
   
-if(stringFinal==stringNuevo){
-    return true;
-}else{
-    return false;
-}
-};
+return stringFinal==stringNuevo
 
+};
+/*
+Para eliminar espacios en blanco entre palabras y caracteres no queridos como la coma usaremos el método
+.replace()
+
+¿Qué significa [.,\s?]?
+[ ] → conjunto de caracteres
+
+. → punto
+
+, → coma
+
+\s → espacio en blanco (whitespace)
+
+? → signo de interrogación
+
+
+*/
 // Do not edit below this line
 module.exports = palindromes;
